@@ -7,12 +7,12 @@
     <!-- displays site properly based on user's device -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
     <title>Frontend Mentor | Product list with cart</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -45,6 +45,7 @@
         .card {
             background-color: #fcf8f5;
             border: 0px;
+            width: 16rem;
             position: relative;
         }
 
@@ -153,439 +154,500 @@
             background-color: #fbf8f6;
             font-size: 13px;
         }
+
+
+        @media (max-width: 767.98px) {
+            .card {
+                background-color: #fcf8f5;
+                border: 0px;
+                position: relative;
+            }
+
+            .card-img-top {
+                width: 20rem;
+                height: 12rem;
+                object-fit: cover;
+            }
+
+            .cart-btn {
+                color: #212529;
+                font-size: 15px;
+                font-weight: bold;
+                width: 10rem;
+                background-color: white;
+                border: 1px hsl(14, 86%, 42%) solid;
+                border-radius: 30px;
+                position: absolute;
+                left: 31%;
+                top: 55%;
+                padding: 6px;
+                text-decoration: none;
+            }
+
+            .cart-btn-select {
+                color: white;
+                font-size: 15px;
+                width: 10rem;
+                background-color: hsl(14, 86%, 42%);
+                border: 1px hsl(14, 86%, 42%) solid;
+                border-radius: 30px;
+                position: absolute;
+                left: 31%;
+                top: 55%;
+                padding: 6px;
+            }
+
+
+
+        }
     </style>
 </head>
 
 <body>
 
-<div class="container mt-5 ml-5">
-    <div class="row mb-3">
-        <h1 id="title">Desserts</h1>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8">
-            <div class="container">
-                <div class="row">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-md-12 col-lg-3 align-self-center">
-                                <div class="card pb-3" style="max-width: 16rem;">
-                                    <img src="./assets/images/image-waffle-desktop.jpg" class="card-img-top rounded" alt="Waffle with berries">
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-0" class="card-body text-center">
-                                        <a id="cart-btn-0" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-0" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-0" class="ps-2 cart-dec-btn"><img src="assets/images/icon-decrement-quantity.svg" width="15px" height="15px" style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-0" class="col-auto">1</div>
-                                                <div class="col-auto">
-                                                    <a id="cart-inc-btn-0" class="pe-2 cart-inc-btn"><img src="assets/images/icon-increment-quantity.svg" width="15px" height="15px" style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-type">Waffle</p>
-                                    <h5 class="card-title">Waffle with Berries</h5>
-                                    <p class="card-text">$ 6.50</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-12 col-lg-3 align-self-center">
-                                <div class="card pb-3" style="max-width: 16rem;">
-                                    <img src="./assets/images/image-creme-brulee-desktop.jpg" class="card-img-top rounded" alt="Vanilla Bean Crème Brûlée">
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-1" class="card-body text-center">
-                                        <a id="cart-btn-1" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-1" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-1" class="ps-2 cart-dec-btn"><img src="assets/images/icon-decrement-quantity.svg" width="15px" height="15px" style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-1" class="col-auto">1</div>
-                                                <div class="col-auto">
-                                                    <a id="cart-inc-btn-1" class="pe-2 cart-inc-btn"><img src="assets/images/icon-increment-quantity.svg" width="15px" height="15px" style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-type">Crème Brûlée</p>
-                                    <h5 class="card-title">Vanilla Bean Crème Brûlée</h5>
-                                    <p class="card-text">$ 7.00</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-12 col-lg-3 align-self-center">
-                                <div class="card pb-3" style="max-width: 16rem;">
-                                    <img src="./assets/images/image-macaron-desktop.jpg" class="card-img-top rounded" alt="Macaron Mix of Five">
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-2" class="card-body text-center">
-                                        <a id="cart-btn-2" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-2" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-2" class="ps-2 cart-dec-btn"><img src="assets/images/icon-decrement-quantity.svg" width="15px" height="15px" style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-2" class="col-auto">1</div>
-                                                <div class="col-auto">
-                                                    <a id="cart-inc-btn-2" class="pe-2 cart-inc-btn"><img src="assets/images/icon-increment-quantity.svg" width="15px" height="15px" style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-type">Macaron</p>
-                                    <h5 class="card-title">Macaron Mix of Five</h5>
-                                    <p class="card-text">$ 8.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row justify-content-sm-center">
-                            <div class="col-lg-auto col-12">
-                                <div class="card pb-3" style="width: 16rem;">
-                                    <img src="./assets/images/image-tiramisu-desktop.jpg" class="card-img-top rounded"
-                                         alt="waffle with barries">
-
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-3" class="card-body text-center">
-                                        <a id="cart-btn-3" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-3" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-3" class="ps-2 cart-dec-btn"><img
-                                                            src="assets/images/icon-decrement-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-3" class="col-auto">1</div>
-                                                <div class="col-auto ">
-                                                    <a id="cart-inc-btn-3" class="pe-2 cart-inc-btn"><img
-                                                            src="assets/images/icon-increment-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <p class="card-type">Tiramisu</p>
-                                    <h5 class="card-title">Classic Tiramisu</h5>
-                                    <p class="card-text">$ 5.50</p>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-auto col-12">
-                                <div class="card pb-3" style="width: 16rem;">
-                                    <img src="./assets/images/image-baklava-desktop.jpg" class="card-img-top rounded"
-                                         alt="waffle with barries">
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-4" class="card-body text-center">
-                                        <a id="cart-btn-4" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-4" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-4" class="ps-2 cart-dec-btn"><img
-                                                            src="assets/images/icon-decrement-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-4" class="col-auto">1</div>
-                                                <div class="col-auto ">
-                                                    <a id="cart-inc-btn-4" class="pe-2 cart-inc-btn"><img
-                                                            src="assets/images/icon-increment-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p class="card-type">Baklava</p>
-                                    <h5 class="card-title">Pistachio Baklava</h5>
-                                    <p class="card-text">$ 4.00</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-auto col-12">
-                                <div class="card pb-3" style="width: 16rem;">
-                                    <img src="./assets/images/image-meringue-desktop.jpg" class="card-img-top rounded"
-                                         alt="waffle with barries">
-
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-5" class="card-body text-center">
-                                        <a id="cart-btn-5" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-5" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-5" class="ps-2 cart-dec-btn"><img
-                                                            src="assets/images/icon-decrement-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-5" class="col-auto">1</div>
-                                                <div class="col-auto ">
-                                                    <a id="cart-inc-btn-5" class="pe-2 cart-inc-btn"><img
-                                                            src="assets/images/icon-increment-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p class="card-type">Pie</p>
-                                    <h5 class="card-title">Lemon Meringue Pie</h5>
-                                    <p class="card-text">$ 5.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-sm-center">
-                            <div class="col-lg-auto col-12">
-                                <div class="card pb-3" style="width: 16rem;">
-                                    <img src="./assets/images/image-cake-desktop.jpg" class="card-img-top rounded"
-                                         alt="waffle with barries">
-
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-6" class="card-body text-center">
-                                        <a id="cart-btn-6" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-6" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-6" class="ps-2 cart-dec-btn"><img
-                                                            src="assets/images/icon-decrement-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-          border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-6" class="col-auto">1</div>
-                                                <div class="col-auto ">
-                                                    <a id="cart-inc-btn-6" class="pe-2 cart-inc-btn"><img
-                                                            src="assets/images/icon-increment-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-          border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p class="card-type">Cake</p>
-                                    <h5 class="card-title">Red Velvet Cake</h5>
-                                    <p class="card-text">$ 4.50</p>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-auto col-12">
-                                <div class="card pb-3" style="width: 16rem;">
-                                    <img src="./assets/images/image-brownie-desktop.jpg" class="card-img-top rounded"
-                                         alt="waffle with barries">
-
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-7" class="card-body text-center">
-                                        <a id="cart-btn-7" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-7" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-
-                                                    <a id="cart-dec-btn-7" class="ps-2 cart-dec-btn"><img
-                                                            src="assets/images/icon-decrement-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-                          border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-7" class="col-auto">1</div>
-                                                <div class="col-auto ">
-                                                    <a id="cart-inc-btn-7" class="pe-2 cart-inc-btn"><img
-                                                            src="assets/images/icon-increment-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-                          border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-type">Brownie</p>
-                                    <h5 class="card-title">Salted Caramel Brownie</h5>
-                                    <p class="card-text">$ 4.50</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-auto col-12">
-                                <div class="card pb-3" style="width: 16rem;">
-                                    <img src="./assets/images/image-panna-cotta-desktop.jpg"
-                                         class="card-img-top rounded"
-                                         alt="waffle with barries">
-
-                                    <!-- cart btn non-select option -->
-                                    <div id="cart-btn-non-select-8" class="card-body text-center">
-                                        <a id="cart-btn-8" class="cart-btn">
-                                            <img src="assets/images/icon-add-to-cart.svg">
-                                            <p style="display: inline;">Add to Cart</p>
-                                        </a>
-                                    </div>
-
-                                    <!-- cart btn select option -->
-                                    <div id="cart-btn-select-8" class="card-body text-center hidden">
-                                        <div class="cart-btn-select">
-                                            <div class="row d-flex justify-content-between text-center">
-                                                <div class="col-auto">
-                                                    <a id="cart-dec-btn-8" class="ps-2 cart-dec-btn"><img
-                                                            src="assets/images/icon-decrement-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                                <div id="cart-num-8" class="col-auto">1</div>
-                                                <div class="col-auto ">
-                                                    <a id="cart-inc-btn-8" class="pe-2 cart-inc-btn"><img
-                                                            src="assets/images/icon-increment-quantity.svg" width="15px"
-                                                            height="15px" style="padding: 2px; border: 1px white solid;
-      border-radius: 50%;"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p class="card-type">Panna Cotta</p>
-                                    <h5 class="card-title">Vanilla Panna Cotta</h5>
-                                    <p class="card-text">$ 6.50</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
+    <div class="container mt-5 ml-5">
+        <div class="row mb-3">
+            <h1 id="title">Desserts</h1>
         </div>
-        <div class="col-md-4">
-            <div class="container px-5 pb-3 checkout rounded">
-                <div id="total-num" class="row checkout-title pt-4">
-                    Your Cart (0)
-                </div>
 
-                <!-- empty -->
-                <div id="empty-cart">
-                    <div class="row text-center my-5">
-                        <div class="col align-self-center"><img src="./assets/images/illustration-empty-cart.svg"></div>
-                    </div>
-
-                    <div class="row text-center">
-                        <div class="col align-self-center checkout-empty">Your added items will appear here</div>
-                    </div>
-                </div>
-
-                <div id="non-empty-cart" class="hidden">
-                    <div id="items-container">
-                        <!-- item template! >> add more -->
-                        <div class="row justify-content-between border-bottom my-3 hidden">
-                            <div class="col-auto align-items-center">
-                                <div class="row cart-item-title mb-2">
-                                    Classic Tiramisu
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col cart-item-num">1x</div>
-                                    <div class="col cart-item-single">@5.50</div>
-                                    <div class="col cart-item-total">$5.50</div>
-                                </div>
-                            </div>
-                            <div class="col-auto d-flex align-items-center">
-                                <a>
-                                    <img src="./assets/images/icon-remove-item.svg" class="cart-item-remove-btn">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- order price -->
-                    <div class="row justify-content-between text-center my-3">
-                        <div class="col-auto d-flex align-items-center" style="padding: 0px; font-size: 13px;">
-                            Order Total
-                        </div>
-                        <div id="total-money" class="col-auto d-flex align-items-center"
-                             style="font-size: 25px; font-weight: bold;">
-                            $46.50
-                        </div>
-                    </div>
-
-                    <!-- carbon neutral announcement -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="container">
                     <div class="row">
-                        <div class="carbon text-center py-2 rounded ">
-                            <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon"> This is a
-                            <b>carbon-neutral</b> delivery
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-waffle-desktop.jpg" class="card-img-top rounded"
+                                            alt="Waffle with berries">
+
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-0" class="card-body text-center">
+                                            <a id="cart-btn-0" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-0" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-0" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px"
+                                                                style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-0" class="col-auto">1</div>
+                                                    <div class="col-auto">
+                                                        <a id="cart-inc-btn-0" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px"
+                                                                style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="card-type">Waffle</p>
+                                        <h5 class="card-title">Waffle with Berries</h5>
+                                        <p class="card-text">$ 6.50</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-creme-brulee-desktop.jpg"
+                                            class="card-img-top rounded" alt="Vanilla Bean Crème Brûlée">
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-1" class="card-body text-center">
+                                            <a id="cart-btn-1" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-1" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-1" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px"
+                                                                style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-1" class="col-auto">1</div>
+                                                    <div class="col-auto">
+                                                        <a id="cart-inc-btn-1" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px"
+                                                                style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="card-type">Crème Brûlée</p>
+                                        <h5 class="card-title">Vanilla Bean Crème Brûlée</h5>
+                                        <p class="card-text">$ 7.00</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-macaron-desktop.jpg"
+                                            class="card-img-top rounded" alt="Macaron Mix of Five">
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-2" class="card-body text-center">
+                                            <a id="cart-btn-2" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-2" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-2" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px"
+                                                                style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-2" class="col-auto">1</div>
+                                                    <div class="col-auto">
+                                                        <a id="cart-inc-btn-2" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px"
+                                                                style="padding: 2px; border: 1px white solid; border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="card-type">Macaron</p>
+                                        <h5 class="card-title">Macaron Mix of Five</h5>
+                                        <p class="card-text">$ 8.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-sm-center">
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-tiramisu-desktop.jpg"
+                                            class="card-img-top rounded" alt="waffle with barries">
+
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-3" class="card-body text-center">
+                                            <a id="cart-btn-3" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-3" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-3" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-3" class="col-auto">1</div>
+                                                    <div class="col-auto ">
+                                                        <a id="cart-inc-btn-3" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <p class="card-type">Tiramisu</p>
+                                        <h5 class="card-title">Classic Tiramisu</h5>
+                                        <p class="card-text">$ 5.50</p>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-baklava-desktop.jpg"
+                                            class="card-img-top rounded" alt="waffle with barries">
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-4" class="card-body text-center">
+                                            <a id="cart-btn-4" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-4" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-4" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-4" class="col-auto">1</div>
+                                                    <div class="col-auto ">
+                                                        <a id="cart-inc-btn-4" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="card-type">Baklava</p>
+                                        <h5 class="card-title">Pistachio Baklava</h5>
+                                        <p class="card-text">$ 4.00</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-meringue-desktop.jpg"
+                                            class="card-img-top rounded" alt="waffle with barries">
+
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-5" class="card-body text-center">
+                                            <a id="cart-btn-5" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-5" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-5" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-5" class="col-auto">1</div>
+                                                    <div class="col-auto ">
+                                                        <a id="cart-inc-btn-5" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="card-type">Pie</p>
+                                        <h5 class="card-title">Lemon Meringue Pie</h5>
+                                        <p class="card-text">$ 5.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-sm-center">
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-cake-desktop.jpg" class="card-img-top rounded"
+                                            alt="waffle with barries">
+
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-6" class="card-body text-center">
+                                            <a id="cart-btn-6" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-6" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-6" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+          border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-6" class="col-auto">1</div>
+                                                    <div class="col-auto ">
+                                                        <a id="cart-inc-btn-6" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+          border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="card-type">Cake</p>
+                                        <h5 class="card-title">Red Velvet Cake</h5>
+                                        <p class="card-text">$ 4.50</p>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-brownie-desktop.jpg"
+                                            class="card-img-top rounded" alt="waffle with barries">
+
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-7" class="card-body text-center">
+                                            <a id="cart-btn-7" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-7" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+
+                                                        <a id="cart-dec-btn-7" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+                          border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-7" class="col-auto">1</div>
+                                                    <div class="col-auto ">
+                                                        <a id="cart-inc-btn-7" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+                          border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="card-type">Brownie</p>
+                                        <h5 class="card-title">Salted Caramel Brownie</h5>
+                                        <p class="card-text">$ 4.50</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto col-12">
+                                    <div class="card pb-3">
+                                        <img src="./assets/images/image-panna-cotta-desktop.jpg"
+                                            class="card-img-top rounded" alt="waffle with barries">
+
+                                        <!-- cart btn non-select option -->
+                                        <div id="cart-btn-non-select-8" class="card-body text-center">
+                                            <a id="cart-btn-8" class="cart-btn">
+                                                <img src="assets/images/icon-add-to-cart.svg">
+                                                <p style="display: inline;">Add to Cart</p>
+                                            </a>
+                                        </div>
+
+                                        <!-- cart btn select option -->
+                                        <div id="cart-btn-select-8" class="card-body text-center hidden">
+                                            <div class="cart-btn-select">
+                                                <div class="row d-flex justify-content-between text-center">
+                                                    <div class="col-auto">
+                                                        <a id="cart-dec-btn-8" class="ps-2 cart-dec-btn"><img
+                                                                src="assets/images/icon-decrement-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                    <div id="cart-num-8" class="col-auto">1</div>
+                                                    <div class="col-auto ">
+                                                        <a id="cart-inc-btn-8" class="pe-2 cart-inc-btn"><img
+                                                                src="assets/images/icon-increment-quantity.svg"
+                                                                width="15px" height="15px" style="padding: 2px; border: 1px white solid;
+      border-radius: 50%;"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="card-type">Panna Cotta</p>
+                                        <h5 class="card-title">Vanilla Panna Cotta</h5>
+                                        <p class="card-text">$ 6.50</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="container px-5 pb-3 checkout rounded">
+                    <div id="total-num" class="row checkout-title pt-4">
+                        Your Cart (0)
+                    </div>
+
+                    <!-- empty -->
+                    <div id="empty-cart">
+                        <div class="row text-center my-5">
+                            <div class="col align-self-center"><img src="./assets/images/illustration-empty-cart.svg">
+                            </div>
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col align-self-center checkout-empty">Your added items will appear here</div>
                         </div>
                     </div>
 
-                    <!-- confirm btn -->
-                    <div class="row py-3">
-                        <div class="btn btn-confirm">Confirm Order</div>
+                    <div id="non-empty-cart" class="hidden">
+                        <div id="items-container">
+                            <!-- item template! >> add more -->
+                            <div class="row justify-content-between border-bottom my-3 hidden">
+                                <div class="col-auto align-items-center">
+                                    <div class="row cart-item-title mb-2">
+                                        Classic Tiramisu
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col cart-item-num">1x</div>
+                                        <div class="col cart-item-single">@5.50</div>
+                                        <div class="col cart-item-total">$5.50</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto d-flex align-items-center">
+                                    <a>
+                                        <img src="./assets/images/icon-remove-item.svg" class="cart-item-remove-btn">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- order price -->
+                        <div class="row justify-content-between text-center my-3">
+                            <div class="col-auto d-flex align-items-center" style="padding: 0px; font-size: 13px;">
+                                Order Total
+                            </div>
+                            <div id="total-money" class="col-auto d-flex align-items-center"
+                                style="font-size: 25px; font-weight: bold;">
+                                $46.50
+                            </div>
+                        </div>
+
+                        <!-- carbon neutral announcement -->
+                        <div class="row">
+                            <div class="carbon text-center py-2 rounded ">
+                                <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon"> This is a
+                                <b>carbon-neutral</b> delivery
+                            </div>
+                        </div>
+
+                        <!-- confirm btn -->
+                        <div class="row py-3">
+                            <div class="btn btn-confirm">Confirm Order</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a>DDoL</a>.
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
