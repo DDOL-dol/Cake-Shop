@@ -20,34 +20,47 @@ fetch("data.json")
 
 
 function initializeCart() {
-    $(".cart-btn").on("click tap",function () {
-        var itemId = getItemId(this);
-        selectPanel(itemId);
-        updateItem(itemId, 1);
-        $(`#cart-num-${itemId}`).text(arr[itemId]);
-        addCartItem(itemId, data[itemId]['category'], 1, data[itemId]['price']);
-        updateCart();
-    });
+    const cartButtons = document.querySelectorAll('.cart-btn');
+    const decButtons = document.querySelectorAll('.cart-dec-btn');
+    const incButtons = document.querySelectorAll('.cart-inc-btn');
 
-    $(".cart-dec-btn").on("click tap", function () {
-        var itemId = getItemId(this);
-        updateItem(itemId, -1);
-        if (arr[itemId] === 0) {
-            clearPanel(itemId);
-            clearCartItem(itemId);
-        } else {
+    cartButtons.forEach(button => {
+        const hammer = new Hammer(button);
+        hammer.on('tap', function (event) {
+            var itemId = getItemId(button);
+            selectPanel(itemId);
+            updateItem(itemId, 1);
             $(`#cart-num-${itemId}`).text(arr[itemId]);
-        }
-        updateCartItem(itemId);
-        updateCart();
+            addCartItem(itemId, data[itemId]['category'], 1, data[itemId]['price']);
+            updateCart();
+        });
     });
 
-    $(".cart-inc-btn").on("click tap",function () {
-        var itemId = getItemId(this);
-        updateItem(itemId, 1);
-        $(`#cart-num-${itemId}`).text(arr[itemId]);
-        updateCartItem(itemId);
-        updateCart();
+    decButtons.forEach(button => {
+        const hammer = new Hammer(button);
+        hammer.on('tap', function () {
+            var itemId = getItemId(button);
+            updateItem(itemId, -1);
+            if (arr[itemId] === 0) {
+                clearPanel(itemId);
+                clearCartItem(itemId);
+            } else {
+                document.getElementById(`cart-num-${itemId}`).textContent = arr[itemId];
+            }
+            updateCartItem(itemId);
+            updateCart();
+        });
+    });
+
+    incButtons.forEach(button => {
+        const hammer = new Hammer(button);
+        hammer.on('tap', function () {
+            var itemId = getItemId(button);
+            updateItem(itemId, 1);
+            document.getElementById(`cart-num-${itemId}`).textContent = arr[itemId];
+            updateCartItem(itemId);
+            updateCart();
+        });
     });
 }
 
@@ -147,15 +160,8 @@ function addCartItem(itemId, itemName, quantity, singlePrice) {
 
     document.getElementById('items-container').appendChild(rowDiv);
 
-    // remove btn: add event listener
-    removeImg.addEventListener('click', function () {
-        updateItem(itemId, -arr[itemId]);
-        updateCart();
-        clearCartItem(itemId);
-        clearPanel(itemId);
-    });
-
-    $(`remove-item-${itemId}`).on("tap", function () {
+    const hammer = new Hammer(removeImg);
+    hammer.on('tap', function(){
         updateItem(itemId, -arr[itemId]);
         updateCart();
         clearCartItem(itemId);
