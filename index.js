@@ -26,7 +26,7 @@ function initializeCart() {
 
     cartButtons.forEach(button => {
         const hammer = new Hammer(button);
-        hammer.on('tap', function (event) {
+        hammer.on('tap', function () {
             var itemId = getItemId(button);
             selectPanel(itemId);
             updateItem(itemId, 1);
