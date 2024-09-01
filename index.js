@@ -20,7 +20,7 @@ fetch("data.json")
 
 
 function initializeCart() {
-    $(".cart-btn").on("click touchstart",function () {
+    $(".cart-btn").on("click tap",function () {
         var itemId = getItemId(this);
         selectPanel(itemId);
         updateItem(itemId, 1);
@@ -29,7 +29,7 @@ function initializeCart() {
         updateCart();
     });
 
-    $(".cart-dec-btn").on("click touchstart", function () {
+    $(".cart-dec-btn").on("click tap", function () {
         var itemId = getItemId(this);
         updateItem(itemId, -1);
         if (arr[itemId] === 0) {
@@ -42,7 +42,7 @@ function initializeCart() {
         updateCart();
     });
 
-    $(".cart-inc-btn").on("click touchstart",function () {
+    $(".cart-inc-btn").on("click tap",function () {
         var itemId = getItemId(this);
         updateItem(itemId, 1);
         $(`#cart-num-${itemId}`).text(arr[itemId]);
@@ -155,7 +155,7 @@ function addCartItem(itemId, itemName, quantity, singlePrice) {
         clearPanel(itemId);
     });
 
-    removeImg.addEventListener('touchstart', function () {
+    $(`remove-item-${itemId}`).on("tap", function () {
         updateItem(itemId, -arr[itemId]);
         updateCart();
         clearCartItem(itemId);
