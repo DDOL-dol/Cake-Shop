@@ -63,6 +63,11 @@
             padding: 6px;
             text-decoration: none;
             touch-action: manipulation;
+            transition: color 0.3s;
+        }
+
+        .cart-btn:hover{
+            color: hsl(14, 86%, 42%);
         }
 
         .cart-btn-select {
@@ -190,7 +195,7 @@
             background-color: #fcf8f5;
         }
 
-        .scroll{
+        .scroll {
             overflow-y: scroll;
             overflow-x: hidden;
             height: 368px;
@@ -198,6 +203,15 @@
 
         #final-panel {
             font-family: "Red Hat Text", sans-serif;
+        }
+
+        @media (min-width: 767.98px) {
+            .checkout {
+                background-color: white;
+                position: fixed;
+                width: 400px;
+                top: 5%;
+            }
         }
 
         @media (max-width: 767.98px) {
@@ -248,15 +262,15 @@
 
     <div class="container mt-5 ml-5">
         <div class="row mb-3">
-            <h1 id="title">Desserts</h1>
-        </div>
+            <div class="col-md-6 col-lg-8">
+                <div class="row ms-1 mb-2">
+                    <h1 id="title">Desserts</h1>
+                </div>
 
-        <div class="row">
-            <div class="col-md-8">
-                <div class="container">
-                    <div class="row">
+                <div class="row">
+                    <div class="col">
                         <div class="container">
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-sm-center">
                                 <div class="col-lg-auto col-12">
                                     <div class="card pb-3">
                                         <img src="./assets/images/image-waffle-desktop.jpg" class="card-img-top rounded"
@@ -367,7 +381,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row justify-content-sm-center">
                                 <div class="col-lg-auto col-12">
                                     <div class="card pb-3">
@@ -609,12 +622,12 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
+
             </div>
-            <div class="col-sm-12 col-md-4 mb-3">
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                 <div class="container px-5 pb-3 checkout rounded">
                     <div id="total-num" class="row checkout-title pt-4">
                         Your Cart (0)
@@ -681,6 +694,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -724,7 +738,7 @@
                             <div class="col-auto d-flex align-items-center">
                                 Order Total
                             </div>
-                            <div id="total-money" class="col-auto d-flex align-items-center"
+                            <div id="checkout-money" class="col-auto d-flex align-items-center"
                                 style="font-size: 25px; font-weight: bold;">
                                 $46.50
                             </div>
