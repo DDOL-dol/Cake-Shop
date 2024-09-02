@@ -23,6 +23,8 @@ function initializeCart() {
     const cartButtons = document.querySelectorAll('.cart-btn');
     const decButtons = document.querySelectorAll('.cart-dec-btn');
     const incButtons = document.querySelectorAll('.cart-inc-btn');
+    const confirmButton = document.getElementById('confirm-cart-btn');
+    const startNewButton = document.getElementById('start-new-btn');
 
     cartButtons.forEach(button => {
         const hammer = new Hammer(button);
@@ -62,11 +64,33 @@ function initializeCart() {
             updateCart();
         });
     });
+
+    const hammer = new Hammer(confirmButton);
+    hammer.on('tap', function () {
+        $("#final-panel").removeClass("d-none");
+        $("#confirm-money").text(`\$ ${totalMoney}`);
+        var cnt = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] !== 0) {
+                cnt++;
+                addConfirmItem(i);
+            }
+        }
+        // add scroll function if needed
+        if (cnt > 4) {
+            $("#confirm-container").addClass("scroll");
+        }
+    });
+
+    const hammer2 = new Hammer(startNewButton);
+    hammer2.on('tap', function () {
+        location.reload();
+    });
 }
 
 function updateCart() {
     $("#total-num").text(`Your Cart (${totalNum})`);
-    $("#total-money").text(`\$ ${totalMoney}`);
+    $("#total-money").text(`$${totalMoney.toFixed(2)}`);
 
     if (totalNum !== 0) {
         $("#non-empty-cart").removeClass("hidden");
@@ -161,7 +185,7 @@ function addCartItem(itemId, itemName, quantity, singlePrice) {
     document.getElementById('items-container').appendChild(rowDiv);
 
     const hammer = new Hammer(removeImg);
-    hammer.on('tap', function(){
+    hammer.on('tap', function () {
         updateItem(itemId, -arr[itemId]);
         updateCart();
         clearCartItem(itemId);
@@ -169,11 +193,71 @@ function addCartItem(itemId, itemName, quantity, singlePrice) {
     });
 }
 
+function addConfirmItem(itemId) {
+    const imgPath = data[itemId]['image']['desktop'];
+    const quantity = arr[itemId];
+    const singlePrice = data[itemId]['price'];
+    const itemName = data[itemId]['name'];
+
+
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'row mx-3 py-4 justify-content-between border-bottom';
+
+    const imgColDiv = document.createElement('div');
+    imgColDiv.className = 'col-auto align-self-start';
+
+    const img = document.createElement('img');
+    img.src = imgPath;
+    img.width = 42;
+    imgColDiv.appendChild(img);
+
+
+    const infoColDiv = document.createElement('div');
+    infoColDiv.className = 'col align-items-center';
+
+
+    const itemTitleRowDiv = document.createElement('div');
+    itemTitleRowDiv.className = 'row cart-item-title mb-1';
+    itemTitleRowDiv.textContent = itemName;
+
+
+    const itemDetailRowDiv = document.createElement('div');
+    itemDetailRowDiv.className = 'row justify-content-start';
+
+    const itemQuantityDiv = document.createElement('div');
+    itemQuantityDiv.className = 'col-1 cart-item-num';
+    itemQuantityDiv.textContent = `${quantity}x`;
+
+    const itemSinglePriceDiv = document.createElement('div');
+    itemSinglePriceDiv.className = 'col-1 cart-item-single';
+    itemSinglePriceDiv.textContent = `@$${singlePrice.toFixed(2)}`;
+
+    itemDetailRowDiv.appendChild(itemQuantityDiv);
+    itemDetailRowDiv.appendChild(itemSinglePriceDiv);
+
+    infoColDiv.appendChild(itemTitleRowDiv);
+    infoColDiv.appendChild(itemDetailRowDiv);
+
+
+    const totalColDiv = document.createElement('div');
+    totalColDiv.className = 'col-auto confirm-item-total d-flex align-items-center';
+    totalColDiv.textContent = `$${(quantity * singlePrice).toFixed(2)}`;
+
+
+    rowDiv.appendChild(imgColDiv);
+    rowDiv.appendChild(infoColDiv);
+    rowDiv.appendChild(totalColDiv);
+
+    const container = document.getElementById('confirm-container');
+    container.appendChild(rowDiv);
+}
+
+
 function updateCartItem(itemId) {
     var num = arr[itemId]
     var price = data[itemId]['price'];
     $(`#item-num-${itemId}`).text(`${num}x`);
-    $(`#item-total-${itemId}`).text(`$${num * price}`)
+    $(`#item-total-${itemId}`).text(`$${(num * price).toFixed(2)}`);
 }
 
 function clearCartItem(itemId) {

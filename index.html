@@ -154,6 +154,12 @@
             font-size: 13px;
         }
 
+        .confirm-item-total {
+            color: #212529;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
         .cart-item-remove-btn {
             border: 1px solid #caafa7;
             border-radius: 50%;
@@ -166,6 +172,33 @@
             font-size: 13px;
         }
 
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .order-confirm {
+            background-color: white;
+        }
+
+        #confirm-container {
+            background-color: #fcf8f5;
+        }
+
+        .scroll{
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 368px;
+        }
+
+        #final-panel {
+            font-family: "Red Hat Text", sans-serif;
+        }
 
         @media (max-width: 767.98px) {
             .card {
@@ -643,7 +676,7 @@
 
                         <!-- confirm btn -->
                         <div class="row py-3">
-                            <div class="btn btn-confirm">Confirm Order</div>
+                            <div id="confirm-cart-btn" class="btn btn-confirm">Confirm Order</div>
                         </div>
                     </div>
                 </div>
@@ -651,14 +684,74 @@
         </div>
     </div>
 
+    <div id="final-panel" class="overlay d-none">
+        <div class="container">
+            <div class="row vh-100 vw-50 justify-content-center">
+                <div class="col-12 col-lg-5 align-self-center">
+                    <div class="container order-confirm rounded px-4">
+                        <div class="row">
+                            <div class="col align-self-center mt-4 my-3">
+                                <img src="./assets/images/icon-order-confirmed.svg" width="30px">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <h1 style="font-weight: bold;">Order Confirmed</h1>
+                            <p style="color: #6f6563;">We hope you enjoy your food!</p>
+                        </div>
+
+
+                        <div id="confirm-container" class="rounded">
+                            <!-- template -->
+                            <!-- <div class="row mx-3 py-4 justify-content-between border-bottom">
+                                <div class="col-auto align-self-start">
+                                    <img src="./assets/images/image-baklava-desktop.jpg" width="42px">
+                                </div>
+                                <div class="col align-items-center">
+                                    <div class="row cart-item-title mb-1">Classic Tiramisu</div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-1 cart-item-num">1x</div>
+                                        <div class="col-1 cart-item-single">@$5.50</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto confirm-item-total d-flex align-items-center">$5.50</div>
+                            </div> -->
+                        </div>
+
+
+                        <!-- order price -->
+                        <div class="row justify-content-between text-center mt-3 pb-2">
+                            <div class="col-auto d-flex align-items-center">
+                                Order Total
+                            </div>
+                            <div id="total-money" class="col-auto d-flex align-items-center"
+                                style="font-size: 25px; font-weight: bold;">
+                                $46.50
+                            </div>
+                        </div>
+
+                        <!-- start new btn -->
+                        <div class="row py-4 mx-2">
+                            <div id="start-new-btn" class="btn btn-confirm">Start New Order</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <!-- jquery -->
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- hammer.js -->
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 
     <!-- bootstrap -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <!-- Load your custom script last -->
     <script src="index.js"></script>
